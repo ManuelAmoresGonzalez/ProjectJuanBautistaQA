@@ -32,13 +32,13 @@ public class PrincipalPageTest {
         driver.get("http://localhost:3000/");
     }
 
-/*
+
 
     @Test
     private void CrearUsuarioCorrectamente() throws InterruptedException {
         PrincipalPage element = new PrincipalPage(driver);
         Assert.assertTrue(element.CrearUsuarioCorrectamente("m@gmail.com","manito"));
-        //driver.close();
+        driver.close();
     }
 
     @Test
@@ -61,58 +61,60 @@ public class PrincipalPageTest {
     private void ConfirmacionSiEliminaProfesor(){
         PrincipalPage widgets = new PrincipalPage(driver);
         Assert.assertTrue(widgets.ConfirmacionSiEliminaProfesor("m@gmail.com","manito"));
-        //driver.close();
+        driver.close();
 
     }
-*/
+
     @Test
-    private void ConfirmacionSiActualizaProfesor(){
+    private void ConfirmacionSiActualizaProfesor() throws InterruptedException {
         PrincipalPage interactions = new PrincipalPage(driver);
-        Assert.assertTrue(interactions.ConfirmacionSiActualizaProfesor());
+        Assert.assertTrue(interactions.ConfirmacionSiActualizaProfesor("m@gmail.com","manito"));
         driver.close();
     }
-/*
+
     @Test
-    private void CrearSeccionSinProfesor(){
+    private void CrearSeccionSinProfesor() throws InterruptedException {
         PrincipalPage bookStoreApplication = new PrincipalPage(driver);
-        Assert.assertTrue(bookStoreApplication.CrearSeccionSinProfesor());
+        Assert.assertTrue(bookStoreApplication.CrearSeccionSinProfesor("m@gmail.com","manito"));
         driver.close();
 
     }
+
+
 
     @Test
     private void CrearSeccionSinMateriasEspecial(){
         PrincipalPage pageLoaded = new PrincipalPage(driver);
-        Assert.assertTrue(pageLoaded.CrearSeccionSinMateriasEspecial());
+        Assert.assertTrue(pageLoaded.CrearSeccionSinMateriasEspecial("m@gmail.com","manito"));
         driver.close();
     }
 
     @Test
-    private void ConfirmacionEliminaSeccion(){
+    private void ConfirmacionEliminaSeccion() throws InterruptedException {
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ConfirmacionEliminaSeccion());
+        Assert.assertTrue(openNewPage.ConfirmacionEliminaSeccion("m@gmail.com","manito"));
         driver.close();
     }
 
     @Test
-    private void ConfirmacionActualizaSeccion(){
+    private void ConfirmacionActualizaSeccion() throws InterruptedException {
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ConfirmacionActualizaSeccion());
+        Assert.assertTrue(openNewPage.ConfirmacionActualizaSeccion("m@gmail.com","manito"));
         driver.close();
     }
 
     @Test
-    private void ConfirmacionEliminaMateria(){
+    private void ConfirmacionEliminaMateria() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ConfirmacionEliminaMateria());
+        Assert.assertTrue(openNewPage.ConfirmacionEliminaMateria("m@gmail.com","manito"));
         driver.close();
     }
 
     @Test
-    private void ConfirmacionActualizaMateria(){
+    private void ConfirmacionActualizaMateria() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ConfirmacionActualizaMateria());
+        Assert.assertTrue(openNewPage.ConfirmacionActualizaMateria("m@gmail.com","manito"));
         driver.close();
-    }*/
+    }
 
 }

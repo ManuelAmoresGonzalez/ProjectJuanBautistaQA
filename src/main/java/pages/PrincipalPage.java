@@ -1,15 +1,12 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class PrincipalPage extends BasePage{
@@ -21,7 +18,7 @@ public class PrincipalPage extends BasePage{
     private WebElement contrasena;
 
     @FindBy(id = "buttonLogin")
-    private WebElement boton;
+    private WebElement botonLogin;
 
     @FindBy(id = "inicio")
     private WebElement botonInicio;
@@ -40,6 +37,9 @@ public class PrincipalPage extends BasePage{
 
     @FindBy(id = "input-Tipo de usuario:")
     private WebElement tipoUsuarioCheckBox;
+
+    @FindBy(id = "input-Docente asginado:")
+    private WebElement profesorCheckBox;
 
     @FindBy(id = "input-Nombre:")
     private WebElement nombreUsuario;
@@ -61,7 +61,7 @@ public class PrincipalPage extends BasePage{
     public boolean CrearUsuarioCorrectamente(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
-        clickOnElement(boton);
+        clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         clickOnElement(tipoUsuarioCheckBox);
         WebElement element = driver.findElement(By.xpath("//option[contains(@value, 'Administrador')]"));
@@ -76,7 +76,7 @@ public class PrincipalPage extends BasePage{
     public boolean CrearUsuarioCorreoIncorrecto(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
-        clickOnElement(boton);
+        clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         clickOnElement(tipoUsuarioCheckBox);
         WebElement element = driver.findElement(By.xpath("//option[contains(@value, 'Administrador')]"));
@@ -97,7 +97,7 @@ public class PrincipalPage extends BasePage{
     public boolean RegistroSinContrasena(String correo, String contrasena){
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
-        clickOnElement(boton);
+        clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         clickOnElement(tipoUsuarioCheckBox);
         WebElement element = driver.findElement(By.xpath("//option[contains(@value, 'Administrador')]"));
@@ -116,7 +116,7 @@ public class PrincipalPage extends BasePage{
     public boolean ConfirmacionSiEliminaProfesor(String correo, String contrasena){
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
-        clickOnElement(boton);
+        clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         List<WebElement> valores = driver.findElements(By.xpath("//td[contains(@class, 'actions-buttons')]"));
         clickOnElement(valores.get(3));
@@ -125,40 +125,86 @@ public class PrincipalPage extends BasePage{
         return true;
     }
 
-    public boolean ConfirmacionSiActualizaProfesor(){
-        scrollPage();
-        findElement("//h5[contains(text(), 'Interactions')]");
-        return driver.findElement(By.xpath("//div[contains(@class, 'show')]")) != null;
-    }
-/*
-    public boolean CrearSeccionSinProfesor(){
-        scrollPage();
-        findElement("//h5[contains(text(), 'Book Store Application')]");
-        return driver.findElement(By.xpath("//div[contains(@class, 'show')]")) != null;
-    }
-
-    public boolean CrearSeccionSinMateriasEspecial(){
-
-        return verifyStatusOfPage("https://demoqa.com/");
+    public boolean ConfirmacionSiActualizaProfesor(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//button[contains(@class, 'edit-btn')]"));
+        clickOnElement(valores.get(1));
+        waitElement();
+        if(driver.findElement(By.xpath("//div[contains(@class, 'react-responsive-modal-modal')]")).isEnabled()){
+            return true;
+        }
+        return false;
     }
 
-    public boolean ConfirmacionEliminaSeccion(){
-       findElement("//div[contains(@class, 'home-banner')]");
-       return switchTabsAndVerifyStatusOfPage();
-
+    public boolean CrearSeccionSinProfesor(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonSecciones);
+        typeOnElement(this.nombreUsuario, "1-2");
+        clickOnElement(botonFormulario);
+        waitElement();
+        if(driver.findElement(By.xpath("//div[contains(@class, 'swal2-container')]")).isEnabled()){
+            return true;
+        }
+        return false;
     }
 
-    public boolean ConfirmacionActualizaSeccion(){
+    public boolean CrearSeccionSinMateriasEspecial(String correo, String contrasena){
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonSecciones);
         return true;
     }
 
-    public boolean ConfirmacionEliminaMateria(){
+    public boolean ConfirmacionEliminaSeccion(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonSecciones);
+        List<WebElement> valores = driver.findElements(By.xpath("//button[contains(@class, 'delete-btn')]"));
+        clickOnElement(valores.get(0));
+        waitElement();
+        return true;
+
+    }
+
+    public boolean ConfirmacionActualizaSeccion(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonSecciones);
+        List<WebElement> valores = driver.findElements(By.xpath("//button[contains(@class, 'edit-btn')]"));
+        clickOnElement(valores.get(0));
+        waitElement();
         return true;
     }
 
-    public boolean ConfirmacionActualizaMateria(){
+    public boolean ConfirmacionEliminaMateria(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonMaterias);
+        List<WebElement> valores = driver.findElements(By.xpath("//button[contains(@class, 'delete-btn')]"));
+        clickOnElement(valores.get(0));
+        waitElement();
         return true;
     }
-*/
+
+    public boolean ConfirmacionActualizaMateria(String correo, String contrasena) throws InterruptedException{
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        clickOnElement(botonSecciones);
+        List<WebElement> valores = driver.findElements(By.xpath("//button[contains(@class, 'edit-btn')]"));
+        clickOnElement(valores.get(0));
+        waitElement();
+        return true;
+    }
+
 }
 

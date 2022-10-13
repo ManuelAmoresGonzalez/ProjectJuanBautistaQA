@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Auto" />
         <module name="SecondProject_V2" />
+        <module name="ProjectJuanBautistaQA" />
       </profile>
     </annotationProcessing>
   </component>

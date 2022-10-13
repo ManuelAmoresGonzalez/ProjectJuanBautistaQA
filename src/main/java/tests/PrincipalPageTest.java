@@ -54,25 +54,24 @@ public class PrincipalPageTest {
         Assert.assertTrue(alertsFrameAndWindows.RegistroSinContrasena("m@gmail.com","manito"));
         driver.close();
     }
-    */
+
 
 
     @Test
     private void ConfirmacionSiEliminaProfesor(){
         PrincipalPage widgets = new PrincipalPage(driver);
-        Assert.assertTrue(widgets.ConfirmacionSiEliminaProfesor());
-        driver.close();
+        Assert.assertTrue(widgets.ConfirmacionSiEliminaProfesor("m@gmail.com","manito"));
+        //driver.close();
 
     }
-/*
+*/
     @Test
     private void ConfirmacionSiActualizaProfesor(){
         PrincipalPage interactions = new PrincipalPage(driver);
         Assert.assertTrue(interactions.ConfirmacionSiActualizaProfesor());
         driver.close();
-
     }
-
+/*
     @Test
     private void CrearSeccionSinProfesor(){
         PrincipalPage bookStoreApplication = new PrincipalPage(driver);

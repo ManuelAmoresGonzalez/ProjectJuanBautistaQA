@@ -113,18 +113,24 @@ public class PrincipalPage extends BasePage{
     }
 
 
-    public boolean ConfirmacionSiEliminaProfesor(){
-        scrollPage();
-        findElement("//h5[contains(text(), 'Widgets')]");
-        return driver.findElement(By.xpath("//div[contains(@class, 'show')]")) != null;
+    public boolean ConfirmacionSiEliminaProfesor(String correo, String contrasena){
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(boton);
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//td[contains(@class, 'actions-buttons')]"));
+        clickOnElement(valores.get(3));
+        WebElement borrar = driver.findElement(By.xpath("//button[contains(@class, 'confirm-button')]"));
+        //clickOnElement(borrar);
+        return true;
     }
-    /*
+
     public boolean ConfirmacionSiActualizaProfesor(){
         scrollPage();
         findElement("//h5[contains(text(), 'Interactions')]");
         return driver.findElement(By.xpath("//div[contains(@class, 'show')]")) != null;
     }
-
+/*
     public boolean CrearSeccionSinProfesor(){
         scrollPage();
         findElement("//h5[contains(text(), 'Book Store Application')]");

@@ -33,7 +33,8 @@ public class PrincipalPageTest {
     }
 
 
-
+//Pruebas Iteracion 1
+    /*
     @Test
     private void CrearUsuarioCorrectamente() throws InterruptedException {
         PrincipalPage element = new PrincipalPage(driver);
@@ -62,7 +63,6 @@ public class PrincipalPageTest {
         PrincipalPage widgets = new PrincipalPage(driver);
         Assert.assertTrue(widgets.ConfirmacionSiEliminaProfesor("m@gmail.com","manito"));
         driver.close();
-
     }
 
     @Test
@@ -77,11 +77,7 @@ public class PrincipalPageTest {
         PrincipalPage bookStoreApplication = new PrincipalPage(driver);
         Assert.assertTrue(bookStoreApplication.CrearSeccionSinProfesor("m@gmail.com","manito"));
         driver.close();
-
     }
-
-
-
     @Test
     private void CrearSeccionSinMateriasEspecial(){
         PrincipalPage pageLoaded = new PrincipalPage(driver);
@@ -116,5 +112,73 @@ public class PrincipalPageTest {
         Assert.assertTrue(openNewPage.ConfirmacionActualizaMateria("m@gmail.com","manito"));
         driver.close();
     }
+
+*/
+    //Pruebas iteracion 2
+
+    @Test
+    private void AdministradorEditaProfesorEspecial() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.AdministradorEditaProfesorEspecial("m@gmail.com","manito"));
+        driver.close();
+    }
+
+
+    @Test
+    private void AdministradorNoEditaProfesorGuia() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.AdministradorNoEditaProfesorGuia("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void HorarioMananaTardeProfesorEspecial() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.HorarioMananaTardeProfesorEspecial("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void UnHorarioAlProfesorGuia() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.UnHorarioAlProfesorGuia("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void NoRegistraDatosSiPresionaX() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.NoRegistraDatosSiPresionaX("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void ModalDeCreadoSiSePresionaEnviar() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.ModalDeCreadoSiSePresionaEnviar("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void ProfesorEspecialNoModificaHorario() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.ProfesorEspecialNoModificaHorario("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void ProfesorGuiaSoloObservaSuHorario() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.ProfesorGuiaSoloObservaSuHorario("m@gmail.com","manito"));
+        driver.close();
+    }
+
+    @Test
+    private void AdministradorObservaCualquierHorario() throws InterruptedException{
+        PrincipalPage openNewPage = new PrincipalPage(driver);
+        Assert.assertTrue(openNewPage.AdministradorObservaCualquierHorario("m@gmail.com","manito"));
+        driver.close();
+    }
+
 
 }

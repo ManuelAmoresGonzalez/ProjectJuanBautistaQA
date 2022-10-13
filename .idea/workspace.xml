@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8176ec58-a0c6-4852-9ac0-0e18fd65f4c5" name="Changes" comment="Prueba">
+    <list default="true" id="8176ec58-a0c6-4852-9ac0-0e18fd65f4c5" name="Changes" comment="Pruebas completas de la Iteracion 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auto.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/PrincipalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/PrincipalPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/PrincipalPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/PrincipalPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/PrincipalPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/PrincipalPage.class" afterDir="false" />
@@ -17,7 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/.." userTempatePath="" />
+  <component name="ExportTestResults" outputFolder="$USER_HOME$/Desktop" userTempatePath="" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -38,7 +37,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.PrincipalPageTest">
+  <component name="RunManager" selected="TestNG.PrincipalPageTest.ConfirmacionSiEliminaProfesor">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -60,23 +59,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AlertsTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FormsTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SecondProject_V2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FormsTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -118,6 +100,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PrincipalPageTest.ConfirmacionSiEliminaProfesor" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Auto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PrincipalPageTest" />
+      <option name="METHOD_NAME" value="ConfirmacionSiEliminaProfesor" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WidgetTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SecondProject_V2" />
       <extension name="coverage">
@@ -137,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PrincipalPageTest.ConfirmacionSiEliminaProfesor" />
         <item itemvalue="TestNG.PrincipalPageTest" />
         <item itemvalue="TestNG.InteractionsTest" />
         <item itemvalue="TestNG.WidgetTest" />
         <item itemvalue="TestNG.AlertsTest" />
-        <item itemvalue="TestNG.FormsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665638531491</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Pruebas completas de la Iteracion 1">
+      <created>1665682198901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665682198901</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +179,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="true" />
+                  <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
             </State>
@@ -183,7 +190,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prueba" />
+    <MESSAGE value="Pruebas completas de la Iteracion 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pruebas completas de la Iteracion 1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

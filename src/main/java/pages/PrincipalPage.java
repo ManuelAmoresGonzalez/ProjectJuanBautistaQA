@@ -119,8 +119,8 @@ public class PrincipalPage extends BasePage{
         clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         List<WebElement> valores = driver.findElements(By.xpath("//td[contains(@class, 'actions-buttons')]"));
-        clickOnElement(valores.get(3));
-        WebElement borrar = driver.findElement(By.xpath("//button[contains(@class, 'confirm-button')]"));
+        clickOnElement(valores.get(1));
+        //WebElement borrar = driver.findElement(By.xpath("//button[contains(@class, 'confirm-button')]"));
         //clickOnElement(borrar);
         return true;
     }
@@ -206,5 +206,63 @@ public class PrincipalPage extends BasePage{
         return true;
     }
 
+
+
+    public boolean ProfesorGuiaSoloObservaSuHorario(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+
+    public boolean AdministradorObservaCualquierHorario(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean ProfesorEspecialNoModificaHorario(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean ModalDeCreadoSiSePresionaEnviar(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean NoRegistraDatosSiPresionaX(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean UnHorarioAlProfesorGuia(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean HorarioMananaTardeProfesorEspecial(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+
+    public boolean AdministradorNoEditaProfesorGuia(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
+    public boolean AdministradorEditaProfesorEspecial(String correo, String contrasena) throws InterruptedException {
+        typeOnElement(this.correo, correo);
+        typeOnElement(this.contrasena, contrasena);
+        clickOnElement(botonLogin);
+        return true;
+    }
 }
 

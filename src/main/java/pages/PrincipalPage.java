@@ -170,7 +170,6 @@ public class PrincipalPage extends BasePage{
         clickOnElement(valores.get(0));
         waitElement();
         return true;
-
     }
 
     public boolean ConfirmacionActualizaSeccion(String correo, String contrasena) throws InterruptedException {
@@ -206,7 +205,9 @@ public class PrincipalPage extends BasePage{
         return true;
     }
 
+    //Iteración 2
 
+/*
 
     public boolean ProfesorGuiaSoloObservaSuHorario(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
@@ -258,10 +259,18 @@ public class PrincipalPage extends BasePage{
         clickOnElement(botonLogin);
         return true;
     }
+
+ */
     public boolean AdministradorEditaProfesorEspecial(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        System.out.println("Tamaño: "+valores.size());
+        waitElement();
+        scrollPage();
+        clickOnElement(valores.get(1));
         return true;
     }
 }

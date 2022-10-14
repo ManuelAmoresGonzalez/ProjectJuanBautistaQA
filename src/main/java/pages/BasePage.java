@@ -28,9 +28,7 @@ public class BasePage {
     public void scrollPage(){
         driver.manage().window().maximize();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        // Launch Website
-        //Scroll down till the bottom of the page
-        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        js.executeScript("window.scrollBy(50,0)");
     }
 
 

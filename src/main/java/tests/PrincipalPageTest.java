@@ -120,10 +120,10 @@ public class PrincipalPageTest {
     private void AdministradorEditaProfesorEspecial() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
         Assert.assertTrue(openNewPage.AdministradorEditaProfesorEspecial("m@gmail.com","manito"));
-        driver.close();
+        //driver.close();
     }
 
-
+/*
     @Test
     private void AdministradorNoEditaProfesorGuia() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
@@ -179,6 +179,6 @@ public class PrincipalPageTest {
         Assert.assertTrue(openNewPage.AdministradorObservaCualquierHorario("m@gmail.com","manito"));
         driver.close();
     }
-
+*/
 
 }

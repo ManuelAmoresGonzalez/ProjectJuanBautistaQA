@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -207,7 +208,7 @@ public class PrincipalPage extends BasePage{
 
     //Iteración 2
 
-/*
+
 
     public boolean ProfesorGuiaSoloObservaSuHorario(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
@@ -220,58 +221,142 @@ public class PrincipalPage extends BasePage{
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
+        clickOnElement(botonUsuarios);
         return true;
     }
+
+
     public boolean ProfesorEspecialNoModificaHorario(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
+        waitElement();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        System.out.println("Para clickear");
+        casilla.click();
         return true;
     }
+
+
     public boolean ModalDeCreadoSiSePresionaEnviar(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = valores.get(1);
+        waitElement();
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
         return true;
     }
+
+
     public boolean NoRegistraDatosSiPresionaX(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = valores.get(1);
+        waitElement();
+        // js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
+        WebElement modalHorario = driver.findElement(By.xpath("//div[contains(@class, 'boxConfiguration')]"));
+        waitElement();
+        WebElement botonCerrar = driver.findElement(By.xpath("//button[contains(@class, 'cancelar-button')]"));
+        botonCerrar.click();
+        waitElement();
         return true;
+
     }
+
+
     public boolean UnHorarioAlProfesorGuia(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
-        return true;
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        waitElement();
+        WebElement element = valores.get(2);
+        js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
+        List<WebElement> modalHorario = driver.findElements(By.xpath("//div[contains(@class, 'boxConfiguration')]"));
+        if(modalHorario.size() == 0){
+            return true;
+        }
+        return false;
     }
+
+
     public boolean HorarioMananaTardeProfesorEspecial(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
-        return true;
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = valores.get(1);
+        waitElement();
+        // js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
+        WebElement modalHorario = driver.findElement(By.xpath("//div[contains(@class, 'boxConfiguration')]"));
+        if(modalHorario.isEnabled()){
+            return true;
+        }
+        return false;
     }
 
     public boolean AdministradorNoEditaProfesorGuia(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
-        return true;
+        clickOnElement(botonUsuarios);
+        List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        waitElement();
+        WebElement element = valores.get(2);
+        js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
+        List<WebElement> modalHorario = driver.findElements(By.xpath("//div[contains(@class, 'boxConfiguration')]"));
+        if(modalHorario.size() == 0){
+            return true;
+        }
+        return false;
     }
 
- */
+
     public boolean AdministradorEditaProfesorEspecial(String correo, String contrasena) throws InterruptedException {
         typeOnElement(this.correo, correo);
         typeOnElement(this.contrasena, contrasena);
         clickOnElement(botonLogin);
         clickOnElement(botonUsuarios);
         List<WebElement> valores = driver.findElements(By.xpath("//div[contains(@id, 'principalRow')]"));
-        System.out.println("Tamaño: "+valores.size());
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = valores.get(1);
         waitElement();
-        scrollPage();
-        clickOnElement(valores.get(1));
-        return true;
+       // js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+        WebElement casilla = driver.findElement(By.xpath("//div[contains(@id, 'l1m')]"));
+        casilla.click();
+        WebElement modalHorario = driver.findElement(By.xpath("//div[contains(@class, 'boxConfiguration')]"));
+        if(modalHorario.isEnabled()){
+            return true;
+        }
+        return false;
     }
 }
 

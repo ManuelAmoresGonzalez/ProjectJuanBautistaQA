@@ -28,7 +28,7 @@ public class BasePage {
     public void scrollPage(){
         driver.manage().window().maximize();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(50,0)");
+        js.executeScript("window.scrollBy(686, 661)");
     }
 
 
@@ -118,7 +118,7 @@ public class BasePage {
     }
 
     public void waitElement() throws InterruptedException {
-        Thread.sleep(5500);
+        Thread.sleep(2000);
     }
 
 

@@ -30,6 +30,7 @@ public class PrincipalPageTest {
         driver = new ChromeDriver(options);
         basePage = new BasePage(driver);
         driver.get("http://localhost:3000/");
+        driver.manage().window().fullscreen();
     }
 
 
@@ -112,24 +113,27 @@ public class PrincipalPageTest {
         Assert.assertTrue(openNewPage.ConfirmacionActualizaMateria("m@gmail.com","manito"));
         driver.close();
     }
-
 */
+
     //Pruebas iteracion 2
 
     @Test
     private void AdministradorEditaProfesorEspecial() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
         Assert.assertTrue(openNewPage.AdministradorEditaProfesorEspecial("m@gmail.com","manito"));
-        //driver.close();
+        driver.close();
     }
 
-/*
+
     @Test
     private void AdministradorNoEditaProfesorGuia() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
         Assert.assertTrue(openNewPage.AdministradorNoEditaProfesorGuia("m@gmail.com","manito"));
         driver.close();
     }
+
+
+
 
     @Test
     private void HorarioMananaTardeProfesorEspecial() throws InterruptedException{
@@ -138,12 +142,15 @@ public class PrincipalPageTest {
         driver.close();
     }
 
+
+
     @Test
     private void UnHorarioAlProfesorGuia() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
         Assert.assertTrue(openNewPage.UnHorarioAlProfesorGuia("m@gmail.com","manito"));
         driver.close();
     }
+
 
     @Test
     private void NoRegistraDatosSiPresionaX() throws InterruptedException{
@@ -152,6 +159,9 @@ public class PrincipalPageTest {
         driver.close();
     }
 
+
+
+
     @Test
     private void ModalDeCreadoSiSePresionaEnviar() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
@@ -159,17 +169,22 @@ public class PrincipalPageTest {
         driver.close();
     }
 
+
+
+
     @Test
     private void ProfesorEspecialNoModificaHorario() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ProfesorEspecialNoModificaHorario("m@gmail.com","manito"));
+        Assert.assertTrue(openNewPage.ProfesorEspecialNoModificaHorario("carmen@gmail.com","manito"));
         driver.close();
     }
+
+
 
     @Test
     private void ProfesorGuiaSoloObservaSuHorario() throws InterruptedException{
         PrincipalPage openNewPage = new PrincipalPage(driver);
-        Assert.assertTrue(openNewPage.ProfesorGuiaSoloObservaSuHorario("m@gmail.com","manito"));
+        Assert.assertTrue(openNewPage.ProfesorGuiaSoloObservaSuHorario("maria@gmail.com","manito"));
         driver.close();
     }
 
@@ -179,6 +194,6 @@ public class PrincipalPageTest {
         Assert.assertTrue(openNewPage.AdministradorObservaCualquierHorario("m@gmail.com","manito"));
         driver.close();
     }
-*/
+
 
 }
